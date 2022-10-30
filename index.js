@@ -19,10 +19,17 @@ document.getElementById("displayDateTime").innerHTML =
   daylist[day] + " <br> " + dateTime;
 
 function displayWeathercondition(response) {
-  console.log(response.data.name);
+  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
+  );
+  let windElement = document.querySelector("wind");
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  let iconElement = document.querySelector("icon");
+  iconElement.setAttribute(
+    "src",
+    "https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"
   );
 }
 function search(city) {

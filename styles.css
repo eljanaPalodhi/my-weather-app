@@ -1,24 +1,66 @@
+html,
 body {
   font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+}
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(
+    -60deg,
+    rgb(248, 248, 248) 50%,
+    rgb(137, 202, 204) 50%
+  );
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.bg3 {
+  animation-duration: 5s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
 }
 .search-form {
   display: block;
   margin: 0 auto;
 }
-body {
-  background-color: burlywood;
-  display: block;
-}
+
 .row {
   margin-top: 60px;
-  background-color: lightblue;
+  background-color: rgb(130, 219, 167);
 }
 .card {
   text-align: center;
-  background-color: blanchedalmond;
+  background-color: rgb(255, 255, 255);
 }
 .city {
   font-size: 70px;
+  opacity: 50%;
 }
 .location {
   display: block;
@@ -28,4 +70,9 @@ body {
 a {
   display: block;
   margin: 0 auto;
+}
+.card {
+  display: block;
+  margin: 0 auto;
+  margin-top: 100px;
 }
