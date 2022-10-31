@@ -16,21 +16,22 @@ var time =
 var dateTime = date + " " + time;
 
 document.getElementById("displayDateTime").innerHTML =
-  daylist[day] + " <br> " + dateTime;
+  daylist[day] + " " + dateTime;
 
 function displayWeathercondition(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  let windElement = document.querySelector("wind");
-  windElement.innerHTML = Math.round(response.data.wind.speed);
-  let iconElement = document.querySelector("icon");
-  iconElement.setAttribute(
-    "src",
-    "https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"
-  );
+  document.querySelector("wind").innerHTML = response.data.wind.speed;
+
+  document
+    .querySelector("#float-left")
+    .setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 function search(city) {
   let apiKey = "e16bf47a46c6c104ae6d402c1f0be31e";

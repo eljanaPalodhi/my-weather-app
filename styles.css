@@ -50,10 +50,6 @@ body {
   margin: 0 auto;
 }
 
-.row {
-  margin-top: 60px;
-  background-color: rgb(130, 219, 167);
-}
 .card {
   text-align: center;
   background-color: rgb(255, 255, 255);
@@ -68,11 +64,30 @@ body {
   border: none;
 }
 a {
-  display: block;
-  margin: 0 auto;
+  text-decoration: none;
 }
+
 .card {
   display: block;
   margin: 0 auto;
   margin-top: 100px;
+}
+
+.date {
+  text-align: left;
+  font-size: 14px;
+
+  color: rgb(48, 99, 99);
+}
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: rgb(158, 145, 145);
+}
+strong {
+  color: rgb(117, 201, 138);
+}
+.weather {
+  margin-bottom: 100px;
+  margin-top: 50px;
 }
