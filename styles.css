@@ -93,5 +93,17 @@ strong {
 }
 .weather-forecast {
   margin: 50px;
+  text-align: center;
   border-style: outset;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  color: rgb(167, 111, 44);
+}
+.weather-temperature-max {
+  font-size: 13px;
+}
+.weather-temperature-min {
+  font-size: 13px;
+  opacity: 0.47;
 }
