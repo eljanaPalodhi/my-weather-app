@@ -18,6 +18,55 @@ var dateTime = date + " " + time;
 document.getElementById("displayDateTime").innerHTML =
   daylist[day] + " " + dateTime;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  forecastHTML =
+    forecastHTML +
+    `
+         
+           <div class="col-2">
+             <div class="weather-forecast-date">Mon</div>
+              <img src="cloudy-sun.png"
+               alt=""
+               width="36"
+              />
+              </br> 
+              <div class="weather-forecast-temperature">
+               <span class="weather-temperature-max"> 
+               18° </span> 
+               <span class="weather-temperature-min">
+               12° </span> 
+             </div>
+            </div>
+          
+  `;
+  forecastHTML =
+    forecastHTML +
+    `
+         
+           <div class="col-2">
+             <div class="weather-forecast-date">Tue</div>
+              <img src="cloudy-sun.png"
+               alt=""
+               width="36"
+              />
+              </br> 
+              <div class="weather-forecast-temperature">
+               <span class="weather-temperature-max"> 
+               18° </span> 
+               <span class="weather-temperature-min">
+               12° </span> 
+             </div>
+            </div>
+          
+  `;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeathercondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -49,8 +98,6 @@ function handleSumbit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSumbit);
 
-search("Zurich");
-
 function showPosition(position) {
   let apiKey = "e16bf47a46c6c104ae6d402c1f0be31e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
@@ -64,3 +111,6 @@ function getCurrentPosition(event) {
 }
 let button = document.querySelector("#location");
 button.addEventListener("click", getCurrentPosition);
+
+search("Zurich");
+displayForecast();

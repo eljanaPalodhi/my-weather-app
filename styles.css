@@ -95,10 +95,11 @@ strong {
   margin: 50px;
   text-align: center;
   border-style: outset;
+  padding: 20px;
 }
 .weather-forecast-date {
   font-size: 16px;
-  color: rgb(167, 111, 44);
+  color: rgb(117, 201, 138);
 }
 .weather-temperature-max {
   font-size: 13px;
