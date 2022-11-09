@@ -91,3 +91,7 @@ strong {
   margin-bottom: 100px;
   margin-top: 50px;
 }
+.weather-forecast {
+  margin: 50px;
+  border-style: outset;
+}
