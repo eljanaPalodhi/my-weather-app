@@ -9,6 +9,16 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+     <script
+      src="https://kit.fontawesome.com/3731c45d9d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Koulen&family=Macondo&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap"
+      rel="stylesheet"
+    />
     <title>Weather</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css" />
@@ -16,92 +26,91 @@
      
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
+
+
   <body>
-    <div> 
-    <div class="bg"></div>
-<div class="bg bg2"></div>
-<div class="bg bg3"></div>
-<div class="content"></div>
+      <div> 
+       <div class="bg"></div>
+      <div class="bg bg2"></div>
+      <div class="bg bg3"></div>
+     <div class="content"></div>
     </div>
     <div class="container">
-      <div class="card" style="width: 35rem;">
-        <div class="card-body">
-          <div class="input-group">
-            <form action="search-form" class="search-form" id="search-form">
-              <input
-                type="search"
-                class="form-control rounded"
-                placeholder="Enter city..."
-                aria-label="Search"
-                aria-describedby="search-addon"
-                id="city-input"
-              />
-              <button
-                type="submit"
-                class="btn btn-outline-primary mb-3"
-                value="Search"
-              >
-                search
-              </button>
-              <button class="btn btn-outline-primary mb-3" id="location">Current location</button>
-            </form>
+      <div id="city-search">
+        <form class="search-form">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search"
+            autofocus="on"
+            autocomplete="off"
+            id="city-search-input"
+          />
+        </form>
+        <button class="current-location" id="location">Location</button>
+      </div>
+      <div class="current-weather">
+        <p id="current-time"></p>
+        <p>Current weather</p>
+        <div class="row">
+          <div class="col-3">
+            <h1 id="city"></h1>
+            <img src="" alt="" id="icon" />
+            <p>
+              <span class="weather-description" id="weather-description">
+              </span>
+            </p>
           </div>
-        </div>
-      
-    
-          <h1></h1>
-           <h4 class="city" id="city"></h4>
-       
-      
-        <div class="weather">
-          <div class="row">
-            <div class="col-6">
-              <div class="clearfix weather-temperature">
-                 <img 
-                 src=""
-                 alt="clear"
-                 id="icon"
-                 class="float-left"
-                 />
-                  <strong id="temperature"></strong>
-                  <span class="units"> C° </span>
-               
-                 <div class="wind">Wind: 
-                  <span id="wind"></span> 
-                 </div>
-               
-                </div>
+          <div class="col-4">
+            <h1>
+              <span id="current-temperature"></span>
+              <span class="degrees-measurment">
+                <a href="#" class="active" id="celsius">°C</a> |
+                <a href="#" id="fahrenheit">°F</a>
+              </span>
+            </h1>
+          </div>
+          <div class="col-5">
+            <p>
+              Feels like <span id="feels-like-temperature"></span>
+              <br />
+            </p>
+            <div class="row">
+              <div class="col">
+                <p>
+                  Humidity
+                  <br />
+                  Wind
+                </p>
+              </div>
+              <div class="col">
+                <p>
+                  <span id="humidity"></span>
+                  <br />
+                  <span id="wind"></span>
+                </p>
+              </div>
             </div>
-          
-           <div class="col-6">
-             <div class="city">
-              <div class="date" id="displayDateTime">
-               <div class="description" id="description">
-                 
-                 
-               </div>
-             </div>
-           </div>
-           </div>
+          </div>
         </div>
       </div>
         
       
-       <div class="weather-forecast" id="forecast">
-        
-       </div>
+       <div class="week-forecast" id="forecast"></div>
       
-           <footer>
+           <div class="footer"> 
              Coded by Eljana Palodhi
-             <a href="https://github.com/eljanaPalodhi/my-weather-app/tree/main"> View source code on Github<a/> 
+             <a href="https://github.com/eljanaPalodhi/my-weather-app/tree/main"> View source code on Github</a> 
               and 
               <a href="https://glistening-valkyrie-f7d3c2.netlify.app/">
                 hosted on Netlify
               </a>
-            </footer>
+            </div>
               
            
      
     <script src="index.js"></script>
+
+
   </body> 
 </html>
